@@ -1,12 +1,25 @@
+.filter-bar-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 0;
+}
+
+.filter {
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
 .posts-container {
   width: 85%;
   margin: 2rem auto;
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 2rem;
+  text-align: center;
   font-weight: bold;
   color: whitesmoke;
+  padding-left: ;
 }
 
 .posts {
@@ -17,6 +30,7 @@ h2 {
 .card {
   background-color: whitesmoke;
   margin: 10px 0;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .card:hover {
