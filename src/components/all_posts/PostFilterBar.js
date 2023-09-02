@@ -14,6 +14,7 @@ export const PostFilterBar = ({ setSearchTerm, setTopicSelection }) => {
   return (
     <Container className="filter-bar-container">
       <select
+        className="filter"
         name="topics"
         id="topic-select"
         onChange={(event) => {
@@ -36,7 +37,7 @@ export const PostFilterBar = ({ setSearchTerm, setTopicSelection }) => {
         }}
         type="text"
         placeholder="Search Titles"
-        className="post-search"
+        className="filter"
       />
     </Container>
   );
