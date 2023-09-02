@@ -1,0 +1,29 @@
+.posts-container {
+  width: 85%;
+  margin: 2rem auto;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: whitesmoke;
+}
+
+.posts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.card {
+  background-color: whitesmoke;
+  margin: 10px 0;
+}
+
+.card:hover {
+  background-color: #d9ed92;
+}
+
+.card-subtitle {
+  margin-bottom: 4px;
+  font-style: italic;
+}
