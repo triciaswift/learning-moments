@@ -18,7 +18,6 @@ export const PostFilterBar = ({ setSearchTerm, setTopicSelection }) => {
         name="topics"
         id="topic-select"
         onChange={(event) => {
-          console.log(event);
           setTopicSelection(event.target.value);
         }}
       >

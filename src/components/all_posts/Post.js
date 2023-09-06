@@ -1,24 +1,8 @@
 import Card from "react-bootstrap/Card";
-import { useEffect, useState } from "react";
-import { getAllPostLikes } from "../../services/postLikeService";
 
 export const Post = ({ post }) => {
-  const [postLikes, setPostLikes] = useState([]);
-  const [selectedPost, setSelectedPost] = useState({});
-
-  useEffect(() => {
-    getAllPostLikes().then((likeArray) => {
-      setPostLikes(likeArray);
-    });
-  }, []);
-
-  useEffect(() => {
-    const likes = postLikes.find((like) => like.id === post.id);
-    setSelectedPost(likes);
-  }, [postLikes, post]);
-
   const handleNumberOfLikes = () => {
-    const numberOfLikes = selectedPost ? selectedPost.postLikes?.length : 0;
+    const numberOfLikes = post ? post.postLikes?.length : 0;
     if (numberOfLikes > 1 || numberOfLikes === 0) {
       return numberOfLikes + " Likes";
     } else {
