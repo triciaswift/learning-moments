@@ -2,10 +2,10 @@ import Container from "react-bootstrap/Container";
 import "./Posts.css";
 import { useEffect, useState } from "react";
 import { Post } from "./Post";
-import { PostFilterBar } from "./PostFilterBar";
+import { AllPostsFilterBar } from "./AllPostsFilterBar";
 import { getAllPosts } from "../../services/postService";
 
-export const PostList = () => {
+export const AllPosts = () => {
   const [allPosts, setAllPosts] = useState([]);
   const [filteredPosts, setFilteredPosts] = useState([]);
   const [topicSelection, setTopicSelection] = useState(0);
@@ -37,8 +37,8 @@ export const PostList = () => {
 
   return (
     <Container className="posts-container">
-      <h2>Posts</h2>
-      <PostFilterBar
+      <h2>All Posts</h2>
+      <AllPostsFilterBar
         setSearchTerm={setSearchTerm}
         setTopicSelection={setTopicSelection}
       />

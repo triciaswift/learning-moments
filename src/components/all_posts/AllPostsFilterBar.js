@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 import { getAllTopics } from "../../services/topicService";
 
-export const PostFilterBar = ({ setSearchTerm, setTopicSelection }) => {
+export const AllPostsFilterBar = ({ setSearchTerm, setTopicSelection }) => {
   const [topics, setTopics] = useState([]);
 
   useEffect(() => {
