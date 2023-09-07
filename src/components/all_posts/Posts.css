@@ -26,17 +26,27 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
 .card {
   background-color: whitesmoke;
   margin: 10px 0;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
-.card:hover {
-  background-color: #d9ed92;
+/* .card:hover {
+  background-color: var(--warning);
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
+} */
+
+.post-title {
+  font-weight: bold;
+}
+
+.post-title:hover {
+  color: var(--info);
+  font-weight: bolder;
 }
 
 .card-subtitle {
