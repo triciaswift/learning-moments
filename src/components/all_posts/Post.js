@@ -1,4 +1,5 @@
 import Card from "react-bootstrap/Card";
+import { Link } from "react-router-dom";
 
 export const Post = ({ post }) => {
   const handleNumberOfLikes = () => {
@@ -12,8 +13,10 @@ export const Post = ({ post }) => {
 
   return (
     <Card style={{ width: "25rem" }}>
-      <Card.Body className="post">
-        <Card.Title className="post-info">{post.title}</Card.Title>
+      <Card.Body className="post-card">
+        <Link to={`/${post.id}`}>
+          <Card.Title className="post-info post-title">{post.title}</Card.Title>
+        </Link>
         <Card.Subtitle className="post-info">{post.topic.name}</Card.Subtitle>
         <Card.Text className="post-info">{handleNumberOfLikes()}</Card.Text>
       </Card.Body>
