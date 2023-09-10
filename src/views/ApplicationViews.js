@@ -3,6 +3,8 @@ import { AllPosts } from "../components/all_posts/AllPosts";
 import { NavBar } from "../components/nav/NavBar";
 import { useEffect, useState } from "react";
 import { PostDetails } from "../components/post_details/PostDetails";
+import { NewPost } from "../components/forms/NewPost";
+import { MyPostsList } from "../components/my_posts/MyPostsList";
 
 export const ApplicationViews = () => {
   const [currentUser, setCurrentUser] = useState({});
@@ -29,6 +31,14 @@ export const ApplicationViews = () => {
           <Route
             path=":postId"
             element={<PostDetails currentUser={currentUser} />}
+          />
+          <Route
+            path="my_posts"
+            element={<MyPostsList currentUser={currentUser} />}
+          />
+          <Route
+            path="new_post"
+            element={<NewPost currentUser={currentUser} />}
           />
         </Route>
       </Route>

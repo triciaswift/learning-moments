@@ -1,5 +1,5 @@
 section.post {
-  margin: 18rem;
+  margin: 10rem 18rem;
   padding: 2rem 3rem;
   border: 2px solid var(--outline);
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
@@ -21,7 +21,7 @@ section.post {
     justify-content: space-between;
 
     .post-info {
-      font-weight: 700;
+      font-weight: bold;
       color: var(--info);
       font-family: "Roboto", sans-serif;
     }
