@@ -1,0 +1,31 @@
+.favorite-posts {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-gap: 3rem 3rem;
+  margin: 3rem 2rem;
+}
+
+.favorite-post {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.375rem;
+  background-color: whitesmoke;
+  padding: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.favorite-post-title {
+  font-weight: bolder;
+  letter-spacing: 1.5px;
+}
+
+.favorite-post-title:hover {
+  color: var(--info);
+  font-weight: bolder;
+}
+
+.btn-delete {
+  font-weight: bold;
+  letter-spacing: 1px;
+}

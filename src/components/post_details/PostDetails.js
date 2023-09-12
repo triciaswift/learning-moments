@@ -1,18 +1,31 @@
 import { useEffect, useState } from "react";
 import "./PostDetails.css";
-import { useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { getPostById } from "../../services/postService";
+import { addPostLike } from "../../services/likeService";
 
 export const PostDetails = ({ currentUser }) => {
   const [post, setPost] = useState({});
   const { postId } = useParams();
 
+  const navigate = useNavigate();
+
   useEffect(() => {
-    getPostById(postId).then((data) => {
-      const postObject = data[0];
+    getPostById(postId).then((postObject) => {
       setPost(postObject);
     });
   }, [postId]);
+
+  const handleSave = () => {
+    const postLike = {
+      userId: currentUser.id,
+      postId: post.id,
+    };
+
+    addPostLike(postLike).then(() => {
+      navigate(`/favorites`);
+    });
+  };
 
   return (
     <section className="post">
@@ -40,11 +53,13 @@ export const PostDetails = ({ currentUser }) => {
       <div className="post-body">{post.body}</div>
       <div className="btn-container">
         {post?.userId === currentUser.id ? (
-          //! TODO: need to add link here to navigate to Edit View
-          <button className="btn btn-info">Edit</button>
+          <Link to={`/edit_post/${postId}`}>
+            <button className="btn btn-info">Edit</button>
+          </Link>
         ) : (
-          //! TODO: need to add link here to navigate to Favorites View
-          <button className="btn btn-info">Like</button>
+          <button className="btn btn-info" onClick={handleSave}>
+            Like
+          </button>
         )}
       </div>
     </section>
