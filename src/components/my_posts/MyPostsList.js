@@ -15,7 +15,7 @@ export const MyPostsList = ({ currentUser }) => {
 
   useEffect(() => {
     getMyPosts();
-  }, []);
+  }, []); //! see if anyone knows how to fix this so page allows refresh
 
   return (
     <div className="my-posts">

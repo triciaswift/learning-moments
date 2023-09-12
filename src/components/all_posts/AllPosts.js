@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { Post } from "./Post";
 import { AllPostsFilterBar } from "./AllPostsFilterBar";
 import { getAllPosts } from "../../services/postService";
-import { Link } from "react-router-dom";
 
 export const AllPosts = () => {
   const [allPosts, setAllPosts] = useState([]);

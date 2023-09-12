@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import { PostDetails } from "../components/post_details/PostDetails";
 import { NewPost } from "../components/forms/NewPost";
 import { MyPostsList } from "../components/my_posts/MyPostsList";
+import { EditPost } from "../components/forms/EditPost";
+import { FavoriteList } from "../components/favorites/FavoriteList";
 
 export const ApplicationViews = () => {
   const [currentUser, setCurrentUser] = useState({});
@@ -26,21 +28,25 @@ export const ApplicationViews = () => {
           </>
         }
       >
-        <Route path="/">
-          <Route index element={<AllPosts />} />
-          <Route
-            path=":postId"
-            element={<PostDetails currentUser={currentUser} />}
-          />
-          <Route
-            path="my_posts"
-            element={<MyPostsList currentUser={currentUser} />}
-          />
-          <Route
-            path="new_post"
-            element={<NewPost currentUser={currentUser} />}
-          />
-        </Route>
+        <Route index element={<AllPosts />} />
+        <Route
+          path=":postId"
+          element={<PostDetails currentUser={currentUser} />}
+        />
+        <Route path="edit_post/:postId" element={<EditPost />} />
+
+        <Route
+          path="my_posts"
+          element={<MyPostsList currentUser={currentUser} />}
+        />
+        <Route
+          path="new_post"
+          element={<NewPost currentUser={currentUser} />}
+        />
+        <Route
+          path="favorites"
+          element={<FavoriteList currentUser={currentUser} />}
+        />
       </Route>
     </Routes>
   );
